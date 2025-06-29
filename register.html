@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Lloyd's Universe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body class="register-body">
+    <header class="register-header">
+        <div class="header-overlay"></div>
+        <h1>Join Our Mission</h1>
+        <p>Register for hygiene programs that make a difference</p>
+    </header>
+
+    <main class="register-container">
+        <div class="program-tabs">
+            <div class="tab active" data-tab="community">
+                <i class="fas fa-people-group"></i>
+                <span>Community Workshop</span>
+            </div>
+            <div class="tab" data-tab="school">
+                <i class="fas fa-school"></i>
+                <span>School Program</span>
+            </div>
+            <div class="tab" data-tab="digital">
+                <i class="fas fa-laptop-medical"></i>
+                <span>Digital Training</span>
+            </div>
+            <div class="tab-highlight"></div>
+        </div>
+
+        <div class="form-container">
+            <form id="communityForm" class="register-form active-form">
+                <h2>Community Hygiene Workshop</h2>
+                <p>Help educate local communities on sanitation practices.</p>
+                
+                <div class="form-group">
+                    <input type="text" id="communityName" required>
+                    <label for="communityName">Full Name</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-user"></i>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="communityEmail" required>
+                    <label for="communityEmail">Email</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="form-group">
+                    <select id="communityLocation" required>
+                        <option value="----" disabled selected>Select Location</option>
+                        <option value="urban">Urban Area</option>
+                        <option value="rural">Rural Area</option>
+                    </select>
+                    <label for="communityLocation">Community Type</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                
+                <button type="submit" class="interactive-btn">
+                    <span>Register Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <form id="schoolForm" class="register-form">
+                <h2>School Hygiene Program</h2>
+                <p>Teach children the importance of cleanliness.</p>
+                
+                <div class="form-group">
+                    <input type="text" id="schoolName" required>
+                    <label for="schoolName">Full Name</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-user"></i>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="schoolEmail" required>
+                    <label for="schoolEmail">Email</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="schoolRole" required>
+                    <label for="schoolRole">Your Role (Teacher/Parent/Volunteer)</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-id-card"></i>
+                </div>
+                
+                <button type="submit" class="interactive-btn">
+                    <span>Register Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <form id="digitalForm" class="register-form">
+                <h2>Digital Hygiene Training</h2>
+                <p>Learn modern hygiene practices online.</p>
+                
+                <div class="form-group">
+                    <input type="text" id="digitalName" required>
+                    <label for="digitalName">Full Name</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-user"></i>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="digitalEmail" required>
+                    <label for="digitalEmail">Email</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="form-group">
+                    <select id="digitalDevice" required>
+                        <option value="none" disabled selected>Primary Device</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="tablet">Tablet</option>
+                    </select>
+                    <label for="digitalDevice">Device Preference</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-laptop"></i>
+                </div>
+                
+                <button type="submit" class="interactive-btn">
+                    <span>Register Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="register.js"></script>
+</body>
+</html>

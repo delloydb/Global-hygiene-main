@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Lloyd's Universe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="donation.css">
+</head>
+<body class="donate-body">
+    <!-- Header (Matches Previous Pages) -->
+    <header class="donate-header">
+        <div class="header-overlay"></div>
+        <h1>Support Our Cause</h1>
+        <p>Your contribution helps spread hygiene awareness worldwide</p>
+    </header>
+
+    <!-- Main Donation Container -->
+    <main class="donate-container">
+        <!-- Donation Options -->
+        <div class="donation-options">
+            <div class="donation-card" data-amount="25">
+                <div class="card-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Basic Support</h3>
+                <p>Provides hygiene kits for 5 children</p>
+                <div class="amount-selector">
+                    <span>$</span>
+                    <input type="number" value="25" min="5">
+                </div>
+                <button class="donate-btn">Donate Now</button>
+            </div>
+
+            <div class="donation-card featured" data-amount="100">
+                <div class="card-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Hygiene Ambassador</h3>
+                <p>Sponsor a community educator for a month</p>
+                <div class="amount-selector">
+                    <span>$</span>
+                    <input type="number" value="100" min="50">
+                </div>
+                <button class="donate-btn">Donate Now</button>
+                <div class="featured-badge">Most Popular</div>
+            </div>
+
+            <div class="donation-card" data-amount="500">
+                <div class="card-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Corporate Partnership</h3>
+                <p>Support large-scale hygiene programs</p>
+                <div class="amount-selector">
+                    <span>$</span>
+                    <input type="number" value="500" min="100">
+                </div>
+                <button class="donate-btn">Partner With Us</button>
+            </div>
+        </div>
+
+        <!-- Custom Donation Form -->
+        <div class="custom-donation">
+            <h2>Or Give a Custom Amount</h2>
+            <form id="customDonationForm">
+                <div class="form-group">
+                    <input type="number" id="customAmount" min="1" placeholder="Enter amount ($)">
+                    <div class="underline"></div>
+                </div>
+                <div class="form-group">
+                    <select id="donationFrequency">
+                        <option value="one-time">One-time donation</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+                    <div class="underline"></div>
+                </div>
+                <button type="submit" class="interactive-btn">
+                    <span>Continue</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Impact Meter -->
+        <div class="impact-meter">
+            <h3>Your Impact</h3>
+            <div class="meter-container">
+                <div class="meter-fill" style="width: 65%"></div>
+            </div>
+            <div class="impact-stats">
+                <div class="stat">
+                    <span class="stat-number">1,245</span>
+                    <span class="stat-label">Hygiene Kits</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">78</span>
+                    <span class="stat-label">Ambassadors</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Communities</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="donation.js"></script>
+</body>
+</html>

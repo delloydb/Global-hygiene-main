@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Hygiene | Global Hygiene Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="learn-hygiene.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js for 3D interactive elements -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Global Hygiene Initiative Logo">
+                <span>Global Hygiene Initiative</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="learn-hygiene.html">Learn</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="resources.html">Resources</a>
+                <a href="partner.html">Partnership</a>
+                <a href="impact.html">Impact</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="learn-hygiene.html">Learn</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="resources.html">Resources</a>
+            <a href="partner.html">Partner</a>
+            <a href="impact.html">Impact</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+    <!-- Introduction Banner -->
+    <section class="learn-banner">
+        <div class="banner-overlay"></div>
+        <div class="container">
+            <div class="banner-content">
+                <h1>Hygiene Education for All</h1>
+                <div class="quote-box">
+                    <blockquote>"Cleanliness is dignity. Learning is freedom."</blockquote>
+                    <div class="quote-author">— Global Hygiene Initiative</div>
+                </div>
+                <p class="banner-text">Accessible digital lessons for all ages and literacy levels. Explore our interactive resources to build lifelong hygiene skills.</p>
+                <div class="literacy-toggle">
+                    <span>Adjust content for:</span>
+                    <div class="toggle-buttons">
+                        <button class="toggle-btn active" data-level="standard">Standard Literacy</button>
+                        <button class="toggle-btn" data-level="low">Low Literacy</button>
+                        <button class="toggle-btn" data-level="visual">Visual Learning</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Tracks -->
+    <section class="learning-tracks">
+        <div class="container">
+            <h2>Explore Learning Tracks</h2>
+            <p class="section-subtitle">Select a category to discover tailored resources</p>
+            
+            <div class="track-grid">
+                <!-- Physical Hygiene -->
+                <div class="track-card" data-category="physical">
+                    <div class="track-icon">
+                        <i class="fas fa-hands-wash"></i>
+                    </div>
+                    <h3>Physical Hygiene</h3>
+                    <p>Body care, handwashing, oral hygiene, and personal cleanliness</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 75%"></div>
+                        <span>75% completed</span>
+                    </div>
+                    <button class="btn-track">Start Learning</button>
+                </div>
+                
+                <!-- Nutrition & Meals -->
+                <div class="track-card" data-category="nutrition">
+                    <div class="track-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Nutrition & Meals</h3>
+                    <p>Food safety, meal preparation, and clean eating practices</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 60%"></div>
+                        <span>60% completed</span>
+                    </div>
+                    <button class="btn-track">Start Learning</button>
+                </div>
+                
+                <!-- Dressing & Self-Presentation -->
+                <div class="track-card" data-category="dressing">
+                    <div class="track-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Dressing & Self-Presentation</h3>
+                    <p>Clothing care, appropriate attire, and personal style</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 45%"></div>
+                        <span>45% completed</span>
+                    </div>
+                    <button class="btn-track">Start Learning</button>
+                </div>
+                
+                <!-- Sanitation & Waste Management -->
+                <div class="track-card" data-category="sanitation">
+                    <div class="track-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3>Sanitation & Waste Management</h3>
+                    <p>Proper waste disposal and maintaining clean environments</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 80%"></div>
+                        <span>80% completed</span>
+                    </div>
+                    <button class="btn-track">Start Learning</button>
+                </div>
+                
+                <!-- Environmental Conservation -->
+                <div class="track-card" data-category="environment">
+                    <div class="track-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Conservation</h3>
+                    <p>Sustainable hygiene practices that protect our planet</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 55%"></div>
+                        <span>55% completed</span>
+                    </div>
+                    <button class="btn-track">Start Learning</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Filter -->
+    <section class="resource-filter">
+        <div class="container">
+            <div class="filter-header">
+                <h2>Learning Resources</h2>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="physical">Physical Hygiene</option>
+                            <option value="nutrition">Nutrition & Meals</option>
+                            <option value="dressing">Dressing & Self-Presentation</option>
+                            <option value="sanitation">Sanitation & Waste Management</option>
+                            <option value="environment">Environmental Conservation</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="format-filter">Format:</label>
+                        <select id="format-filter">
+                            <option value="all">All Formats</option>
+                            <option value="video">Videos</option>
+                            <option value="article">Articles</option>
+                            <option value="infographic">Infographics</option>
+                            <option value="slides">Slide Decks</option>
+                            <option value="interactive">Interactive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="level-filter">Level:</label>
+                        <select id="level-filter">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-grid">
+                <!-- Resource cards will be populated here by JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button class="btn-load">Load More Resources</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section class="interactive-tools">
+        <div class="container">
+            <h2>Interactive Learning Tools</h2>
+            <p class="section-subtitle">Hands-on experiences to reinforce hygiene concepts</p>
+            
+            <div class="tool-tabs">
+                <button class="tool-tab active" data-tool="handwash">Hand Washing</button>
+                <button class="tool-tab" data-tool="dressing">Dress with Dignity</button>
+                <button class="tool-tab" data-tool="meal">Clean Meal Guide</button>
+            </div>
+            
+            <div class="tool-content">
+                <!-- Hand Washing 3D Tutorial -->
+                <div class="tool-panel active" id="handwash-tool">
+                    <div class="tool-description">
+                        <h3>Proper Hand Washing Technique</h3>
+                        <p>Follow the 3D guide to learn the WHO-recommended 11-step handwashing procedure. Practice each step and get feedback on your technique.</p>
+                        <div class="steps-info">
+                            <div class="step active" data-step="1">1. Wet Hands</div>
+                            <div class="step" data-step="2">2. Apply Soap</div>
+                            <div class="step" data-step="3">3. Palm to Palm</div>
+                             <div class="step" data-step="3">4. Rinse with clean water</div>
+                            <!-- ... more steps ... -->
+                        </div>
+                        <button class="btn-start">Start Interactive Tutorial</button>
+                    </div>
+                    <div class="tool-display">
+                        <div class="handwash-canvas" id="handwash-3d">
+                            <!-- Three.js canvas will be inserted here -->
+                            <div class="loading-3d">
+                                <div class="spinner"></div>
+                                <p>Loading 3D interactive...</p>
+                            </div>
+                        </div>
+                        <div class="feedback-box">
+                            <h4>Your Progress</h4>
+                            <div class="feedback-message">Complete each step to unlock feedback</div>
+                            <div class="completion-badge hidden">
+                                <i class="fas fa-award"></i>
+                                <span>Handwashing Expert!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dress with Dignity Mix-n-Match -->
+                <div class="tool-panel" id="dressing-tool">
+                    <div class="tool-description">
+                        <h3>Dress with Dignity</h3>
+                        <p>Mix and match clothing items to create appropriate outfits for different occasions while maintaining hygiene standards.</p>
+                        <div class="outfit-selector">
+                            <label>Select Occasion:</label>
+                            <select id="occasion-select">
+                                <option value="school">School/Work</option>
+                                <option value="religious">Religious Setting</option>
+                                <option value="formal">Formal Event</option>
+                                <option value="casual">Casual Outing</option>
+                            </select>
+                        </div>
+                        <button class="btn-reset">Reset Outfit</button>
+                    </div>
+                    <div class="tool-display">
+                        <div class="dressing-rack">
+                            <div class="character-base">
+                                <img src="images/character-base.png" alt="Character base">
+                                <div class="clothing-layer top" id="top-clothing"></div>
+                                <div class="clothing-layer bottom" id="bottom-clothing"></div>
+                                <div class="clothing-layer footwear" id="footwear"></div>
+                                <div class="clothing-layer accessory" id="accessory"></div>
+                            </div>
+                        </div>
+                        <div class="clothing-options">
+                            <h4>Clothing Options</h4>
+                            <div class="clothing-category">
+                                <h5>Tops</h5>
+                                <div class="clothing-items">
+                                    <div class="clothing-item" data-type="top" data-id="shirt1" style="background-image: url('images/clothing/shirt1.png')"></div>
+                                    <div class="clothing-item" data-type="top" data-id="blouse1" style="background-image: url('images/clothing/blouse1.png')"></div>
+                                    <!-- More items... -->
+                                </div>
+                            </div>
+                            <div class="clothing-category">
+                                <h5>Bottoms</h5>
+                                <div class="clothing-items">
+                                    <div class="clothing-item" data-type="bottom" data-id="pants1" style="background-image: url('images/clothing/pants1.png')"></div>
+                                    <div class="clothing-item" data-type="bottom" data-id="skirt1" style="background-image: url('images/clothing/skirt1.png')"></div>
+                                    <!-- More items... -->
+                                </div>
+                            </div>
+                            <!-- More categories... -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Make a Clean Meal Visual Guide -->
+                <div class="tool-panel" id="meal-tool">
+                    <div class="tool-description">
+                        <h3>Make a Clean Meal</h3>
+                        <p>Build a hygienic meal by selecting ingredients and following proper food preparation steps. Get tips on safe cooking practices.</p>
+                        <div class="meal-type">
+                            <label>Meal Type:</label>
+                            <select id="meal-select">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </div>
+                        <div class="nutrition-facts hidden">
+                            <h4>Nutrition & Hygiene Score</h4>
+                            <div class="score-meter">
+                                <div class="meter-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="score-details"></div>
+                        </div>
+                    </div>
+                    <div class="tool-display">
+                        <div class="meal-planner">
+                            <div class="workspace">
+                                <div class="plate" id="meal-plate"></div>
+                                <div class="utensils">
+                                    <div class="utensil clean" data-utensil="knife"></div>
+                                    <div class="utensil clean" data-utensil="fork"></div>
+                                    <div class="utensil clean" data-utensil="spoon"></div>
+                                </div>
+                            </div>
+                            <div class="ingredient-pool">
+                                <h4>Ingredients</h4>
+                                <div class="ingredient-categories">
+                                    <div class="ingredient-category active" data-category="proteins">
+                                        <i class="fas fa-drumstick-bite"></i> Proteins
+                                    </div>
+                                    <div class="ingredient-category" data-category="vegetables">
+                                        <i class="fas fa-carrot"></i> Vegetables
+                                    </div>
+                                    <div class="ingredient-category" data-category="grains">
+                                        <i class="fas fa-bread-slice"></i> Grains
+                                    </div>
+                                    <!-- More categories... -->
+                                </div>
+                                <div class="ingredient-items">
+                                    <!-- Ingredients will be loaded here by category -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preparation-steps hidden">
+                            <h4>Preparation Guide</h4>
+                            <ol class="steps-list">
+                                <!-- Steps will be generated based on selected ingredients -->
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age-Specific Learning -->
+    <section class="age-learning">
+        <div class="container">
+            <h2>Age-Specific Learning Paths</h2>
+            <p class="section-subtitle">Content tailored for different age groups and learning needs</p>
+            
+            <div class="age-tabs">
+                <button class="age-tab active" data-age="children">Children (5-12)</button>
+                <button class="age-tab" data-age="teens">Teens (13-19)</button>
+                <button class="age-tab" data-age="adults">Adults (20+)</button>
+                <button class="age-tab" data-age="seniors">Seniors (65+)</button>
+            </div>
+            
+            <div class="age-content">
+                <!-- Children's Content -->
+                <div class="age-panel active" id="children-panel">
+                    <div class="age-resources">
+                        <div class="resource-card featured">
+                            <div class="resource-thumbnail" style="background-image: url('images/kids-video-thumb.jpg')">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                                <span class="duration">5:32</span>
+                            </div>
+                            <div class="resource-info">
+                                <h3>Superhero Handwashing Adventure</h3>
+                                <p class="resource-desc">Join Captain Clean and the Hygiene Heroes as they battle Germ Monsters!</p>
+                                <div class="resource-meta">
+                                    <span class="resource-type"><i class="fas fa-video"></i> Video</span>
+                                    <span class="resource-level"><i class="fas fa-star"></i> Beginner</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More children's resources... -->
+                    </div>
+                    <div class="age-description">
+                        <h3>Learning Through Play</h3>
+                        <p>Our children's content uses engaging stories, games, and colorful animations to teach basic hygiene concepts in a fun, memorable way.</p>
+                        <ul class="age-features">
+                            <li><i class="fas fa-check-circle"></i> Animated characters and songs</li>
+                            <li><i class="fas fa-check-circle"></i> Interactive storybooks</li>
+                            <li><i class="fas fa-check-circle"></i> Printable activity sheets</li>
+                            <li><i class="fas fa-check-circle"></i> Parent/teacher guides</li>
+                        </ul>
+                        <button class="btn-age">Explore All Children's Resources</button>
+                    </div>
+                </div>
+                
+                <!-- Other age panels would go here (teens, adults, seniors) -->
+                <!-- Content structure similar to children's panel but with age-appropriate resources -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo">
+                    <p>The Global Hygiene Initiative is a program of Lloyd's Universe dedicated to improving health outcomes through hygiene education, resources, and community engagement worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn-hygiene.html">Learn Hygiene</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Get Resources</a></li>
+                        <li><a href="partner.html">Partner & Volunteer</a></li>
+                        <li><a href="impact.html">Impact Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Hygiene Ave, Health City, HC 12345</li>
+                        <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+                        <li><i class="fas fa-envelope"></i> info@globalhygiene.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-actions">
+                    <h4>Take Action</h4>
+                    <a href="#" class="btn-donate">Donate Now</a>
+                    <a href="partner.html" class="btn-volunteer">Volunteer</a>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global Hygiene Initiative by Lloyd's Universe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="learn-hygiene.js"></script>
+</body>
+</html>

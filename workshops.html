@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops & Outreach | Global Hygiene Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="workshops.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Global Hygiene Initiative Logo">
+                <span>Global Hygiene Initiative</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="learn-hygiene.html">Learn</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="resources.html">Resources</a>
+                <a href="partner.html">Partnership</a>
+                <a href="impact.html">Impact</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="learn-hygiene.html">Learn</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="resources.html">Resources</a>
+            <a href="partner.html">Partnership</a>
+            <a href="impact.html">Impact</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="workshops-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bringing Hygiene Education to Communities</h1>
+                <p class="hero-text">Our hands-on workshops transform hygiene practices through education, training, and essential resource distribution.</p>
+                <div class="hero-buttons">
+                    <a href="#upcoming" class="btn-primary">Find a Workshop</a>
+                    <a href="#volunteer" class="btn-secondary">Become a Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Vision -->
+    <section class="workshop-vision">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Workshop Vision</h2>
+                <p class="section-subtitle">Creating lasting impact through direct community engagement</p>
+            </div>
+            
+            <div class="vision-tabs">
+                <button class="vision-tab active" data-tab="what">What We Do</button>
+                <button class="vision-tab" data-tab="who">Who We Serve</button>
+                <button class="vision-tab" data-tab="impact">Our Impact</button>
+            </div>
+            
+            <div class="vision-content">
+                <!-- What We Do Panel -->
+                <div class="vision-panel active" id="what-panel">
+                    <div class="panel-image">
+                        <img src="images/workshop-activity.jpg" alt="Workshop activity">
+                    </div>
+                    <div class="panel-text">
+                        <h3>Comprehensive Hygiene Education</h3>
+                        <p>Our workshops provide more than just information - they create behavior change through interactive learning experiences.</p>
+                        <div class="activity-grid">
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <h4>Interactive Training</h4>
+                                <p>Hands-on sessions teaching proper hygiene techniques and habits</p>
+                            </div>
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-archive"></i>
+                                </div>
+                                <h4>Kit Distribution</h4>
+                                <p>Providing essential hygiene supplies to participants</p>
+                            </div>
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h4>Community Evangelism</h4>
+                                <p>Training local advocates to sustain hygiene education</p>
+                            </div>
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-clinic-medical"></i>
+                                </div>
+                                <h4>Health Screenings</h4>
+                                <p>Basic health checks and referrals when possible</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Who We Serve Panel -->
+                <div class="vision-panel" id="who-panel">
+                    <div class="panel-image">
+                        <img src="images/community-group.jpg" alt="Community group">
+                    </div>
+                    <div class="panel-text">
+                        <h3>Focusing on Underserved Communities</h3>
+                        <p>We prioritize populations with the greatest need and least access to hygiene resources.</p>
+                        <div class="beneficiary-chart">
+                            <div class="chart-bar" data-percentage="45">
+                                <div class="bar-label">Children (under 15)</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-value">45%</span>
+                                </div>
+                            </div>
+                            <div class="chart-bar" data-percentage="30">
+                                <div class="bar-label">Rural Communities</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-value">30%</span>
+                                </div>
+                            </div>
+                            <div class="chart-bar" data-percentage="15">
+                                <div class="bar-label">Urban Poor</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-value">15%</span>
+                                </div>
+                            </div>
+                            <div class="chart-bar" data-percentage="10">
+                                <div class="bar-label">Displaced Persons</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill"></div>
+                                    <span class="bar-value">10%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="note">Our workshops are tailored to meet the specific needs of each group we serve, with age-appropriate content and culturally sensitive approaches.</p>
+                    </div>
+                </div>
+                
+                <!-- Impact Panel -->
+                <div class="vision-panel" id="impact-panel">
+                    <div class="panel-image">
+                        <img src="images/workshop-impact.jpg" alt="Workshop impact">
+                    </div>
+                    <div class="panel-text">
+                        <h3>Measurable, Sustainable Impact</h3>
+                        <p>We track both immediate outcomes and long-term behavior change from our workshops.</p>
+                        <div class="impact-stats">
+                            <div class="stat-card">
+                                <div class="stat-value">87%</div>
+                                <div class="stat-label">Improved handwashing practices</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">63%</div>
+                                <div class="stat-label">Reduction in hygiene-related illnesses</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">92%</div>
+                                <div class="stat-label">Participant satisfaction rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">4.8/5</div>
+                                <div class="stat-label">Average trainer rating</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-impact">
+                            <blockquote>"After the workshop, our village saw fewer cases of diarrhea and skin infections. The children remind each other to wash hands properly!"</blockquote>
+                            <div class="testimonial-author">
+                                <img src="images/testimonial-local.jpg" alt="Community leader">
+                                <div>
+                                    <div class="author-name">Maria Fernandez</div>
+                                    <div class="author-title">Community Leader, Guatemala</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Calendar -->
+    <section class="workshop-calendar" id="upcoming">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Workshops</h2>
+                <p class="section-subtitle">Join us at an upcoming event or bring a workshop to your community</p>
+            </div>
+            
+            <div class="calendar-tools">
+                <div class="map-toggle">
+                    <button class="toggle-btn active" data-view="list">List View</button>
+                    <button class="toggle-btn" data-view="map">Map View</button>
+                </div>
+                <div class="calendar-filters">
+                    <div class="filter-group">
+                        <label for="country-filter">Country:</label>
+                        <select id="country-filter">
+                            <option value="all">All Countries</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="india">India</option>
+                            <option value="guatemala">Guatemala</option>
+                            <option value="indonesia">Indonesia</option>
+                            <option value="bangladesh">Bangladesh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="month-filter">Month:</label>
+                        <select id="month-filter">
+                            <option value="all">All Months</option>
+                            <option value="june">June 2023</option>
+                            <option value="july">July 2023</option>
+                            <option value="august">August 2023</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="type-filter">Type:</label>
+                        <select id="type-filter">
+                            <option value="all">All Types</option>
+                            <option value="school">School Program</option>
+                            <option value="community">Community Workshop</option>
+                            <option value="trainer">Trainer Certification</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar-view active" id="list-view">
+                <div class="workshop-list">
+                    <!-- Workshop cards will be populated by JavaScript -->
+                </div>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color school"></div>
+                        <span>School Program</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color community"></div>
+                        <span>Community Workshop</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color trainer"></div>
+                        <span>Trainer Certification</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar-view" id="map-view">
+                <div class="map-container">
+                    <div id="workshop-map"></div>
+                    <div class="map-sidebar">
+                        <h3>Workshop Locations</h3>
+                        <div class="map-workshops-list">
+                            <!-- Map location list will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Call -->
+    <section class="volunteer-call" id="volunteer">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our Volunteer Team</h2>
+                <p class="section-subtitle">Make a direct impact through in-person or virtual opportunities</p>
+            </div>
+            
+            <div class="volunteer-options">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>On-Site Volunteer</h3>
+                    <p>Join our team directly in the field for workshops and outreach events.</p>
+                    <ul class="option-details">
+                        <li><i class="fas fa-check"></i> Minimum 2-week commitment</li>
+                        <li><i class="fas fa-check"></i> Training provided</li>
+                        <li><i class="fas fa-check"></i> Housing & meals included</li>
+                    </ul>
+                    <button class="btn-option">Learn More</button>
+                </div>
+                
+                <div class="option-card highlighted">
+                    <div class="option-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Local Ambassador</h3>
+                    <p>Lead workshops in your own community with our support.</p>
+                    <ul class="option-details">
+                        <li><i class="fas fa-check"></i> Flexible schedule</li>
+                        <li><i class="fas fa-check"></i> Certification training</li>
+                        <li><i class="fas fa-check"></i> Ongoing mentorship</li>
+                    </ul>
+                    <button class="btn-option">Apply Now</button>
+                    <div class="highlight-badge">Most Needed</div>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Virtual Volunteer</h3>
+                    <p>Support our mission remotely with your skills and expertise.</p>
+                    <ul class="option-details">
+                        <li><i class="fas fa-check"></i> Flexible hours</li>
+                        <li><i class="fas fa-check"></i> Various roles available</li>
+                        <li><i class="fas fa-check"></i> Global collaboration</li>
+                    </ul>
+                    <button class="btn-option">View Opportunities</button>
+                </div>
+            </div>
+            
+            <div class="volunteer-form-section">
+                <div class="form-intro">
+                    <h3>Become a Local Ambassador</h3>
+                    <p>Our ambassador program trains and equips local leaders to conduct hygiene workshops in their own communities. Complete the form below to start the application process.</p>
+                    <div class="form-benefits">
+                        <h4>Ambassador Benefits:</h4>
+                        <ul>
+                            <li><i class="fas fa-award"></i> Comprehensive training program</li>
+                            <li><i class="fas fa-book"></i> Curriculum and materials</li>
+                            <li><i class="fas fa-medal"></i> Certification upon completion</li>
+                            <li><i class="fas fa-network-wired"></i> Ongoing support network</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <form class="volunteer-form" id="ambassador-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country *</label>
+                            <select id="country" required>
+                                <option value="">Select Country</option>
+                                <option value="kenya">Kenya</option>
+                                <option value="india">India</option>
+                                <option value="guatemala">Guatemala</option>
+                                <option value="indonesia">Indonesia</option>
+                                <option value="bangladesh">Bangladesh</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City/Town *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Relevant Experience *</label>
+                        <textarea id="experience" rows="3" required></textarea>
+                        <p class="help-text">Briefly describe any teaching, community work, or health-related experience</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">Motivation *</label>
+                        <textarea id="motivation" rows="3" required></textarea>
+                        <p class="help-text">Why do you want to become a hygiene ambassador?</p>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="commitment" required>
+                        <label for="commitment">I commit to conducting at least 4 workshops per year if certified</label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">Submit Application</button>
+                        <p class="form-note">We'll contact you within 5 business days to discuss next steps.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos & Recap Videos -->
+    <section class="media-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Workshop Highlights</h2>
+                <p class="section-subtitle">See our workshops in action around the world</p>
+            </div>
+            
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" data-tab="photos">Photo Gallery</button>
+                <button class="gallery-tab" data-tab="videos">Impact Videos</button>
+                <button class="gallery-tab" data-tab="stories">Success Stories</button>
+            </div>
+            
+            <div class="gallery-content">
+                <!-- Photo Gallery -->
+                <div class="gallery-panel active" id="photos-panel">
+                    <div class="photo-grid">
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop1.png" alt="Workshop activity">
+                            <div class="photo-caption">
+                                <h4>Handwashing Training</h4>
+                                <p>Nairobi, Kenya - June 2023</p>
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop2.jpg" alt="Children learning">
+                            <div class="photo-caption">
+                                <h4>School Hygiene Program</h4>
+                                <p>Dhaka, Bangladesh - May 2023</p>
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop3.jpg" alt="Kit distribution">
+                            <div class="photo-caption">
+                                <h4>Hygiene Kit Distribution</h4>
+                                <p>Guatemala City, Guatemala - April 2023</p>
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop4.jpg" alt="Community workshop">
+                            <div class="photo-caption">
+                                <h4>Community Workshop</h4>
+                                <p>Mumbai, India - March 2023</p>
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop5.jpg" alt="Trainer certification">
+                            <div class="photo-caption">
+                                <h4>Trainer Certification</h4>
+                                <p>Jakarta, Indonesia - February 2023</p>
+                            </div>
+                        </div>
+                        <div class="photo-card">
+                            <img src="images/gallery/workshop6.jpg" alt="Rural outreach">
+                            <div class="photo-caption">
+                                <h4>Rural Outreach</h4>
+                                <p>Kisumu, Kenya - January 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-view-all">View Full Gallery</button>
+                </div>
+                
+                <!-- Impact Videos -->
+                <div class="gallery-panel" id="videos-panel">
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="images/videos/video1-thumb.jpg" alt="Video thumbnail">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>Transforming a Community</h4>
+                            <p>See how hygiene education changed health outcomes in rural Guatemala</p>
+                            <span class="video-duration">4:32</span>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="images/videos/video2-thumb.jpg" alt="Video thumbnail">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>A Day in Our Workshop</h4>
+                            <p>Follow along with a typical school hygiene program in Kenya</p>
+                            <span class="video-duration">6:15</span>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="images/videos/video3-thumb.jpg" alt="Video thumbnail">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                            </div>
+                            <h4>Trainer Stories</h4>
+                            <p>Hear from our local ambassadors about their experiences</p>
+                            <span class="video-duration">8:42</span>
+                        </div>
+                    </div>
+                    <button class="btn-view-all">View All Videos</button>
+                </div>
+                
+                <!-- Success Stories -->
+                <div class="gallery-panel" id="stories-panel">
+                    <div class="story-carousel">
+                        <div class="story-card active">
+                            <div class="story-image">
+                                <img src="images/stories/story1.jpg" alt="Success story">
+                            </div>
+                            <div class="story-text">
+                                <h3>Clean Water, Healthy Village</h3>
+                                <p class="story-location"><i class="fas fa-map-marker-alt"></i> Rural Kenya</p>
+                                <div class="story-content">
+                                    <p>After our WASH workshop, the community worked together to build proper sanitation facilities and protect their water source. Within months, waterborne illnesses dropped by 70%.</p>
+                                    <blockquote>"We didn't realize how our daily habits were making us sick. Now our children are healthier and missing less school."</blockquote>
+                                </div>
+                                <div class="story-author">
+                                    <img src="images/stories/author1.jpg" alt="Story author">
+                                    <div>
+                                        <div class="author-name">James Mwangi</div>
+                                        <div class="author-role">Community Elder</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-image">
+                                <img src="images/stories/story2.jpg" alt="Success story">
+                            </div>
+                            <div class="story-text">
+                                <h3>From Participant to Trainer</h3>
+                                <p class="story-location"><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                                <div class="story-content">
+                                    <p>Priya attended our workshop as a teenager, then became a certified trainer. She's now taught hygiene practices to over 500 students in her neighborhood.</p>
+                                    <blockquote>"The workshop changed my life. Now I'm proud to help others live healthier lives too."</blockquote>
+                                </div>
+                                <div class="story-author">
+                                    <img src="images/stories/author2.jpg" alt="Story author">
+                                    <div>
+                                        <div class="author-name">Priya Patel</div>
+                                        <div class="author-role">Local Ambassador</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-image">
+                                <img src="images/stories/story3.jpg" alt="Success story">
+                            </div>
+                            <div class="story-text">
+                                <h3>A School's Transformation</h3>
+                                <p class="story-location"><i class="fas fa-map-marker-alt"></i> Guatemala City</p>
+                                <div class="story-content">
+                                    <p>After implementing our school hygiene program, attendance rates improved by 25% as students stayed healthier. The school now serves as a model for others in the district.</p>
+                                    <blockquote>"Our students are more focused in class now that they're not constantly battling preventable illnesses."</blockquote>
+                                </div>
+                                <div class="story-author">
+                                    <img src="images/stories/author3.jpg" alt="Story author">
+                                    <div>
+                                        <div class="author-name">Carlos Mendez</div>
+                                        <div class="author-role">School Principal</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-controls">
+                            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-slide="0"></span>
+                                <span class="indicator" data-slide="1"></span>
+                                <span class="indicator" data-slide="2"></span>
+                            </div>
+                            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn-view-all">Read More Stories</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="workshop-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Whether you want to attend a workshop, volunteer, or bring our program to your community, we'd love to connect.</p>
+                <div class="cta-buttons">
+                    <a href="#upcoming" class="btn-primary">Find a Workshop</a>
+                    <a href="#volunteer" class="btn-secondary">Volunteer Opportunities</a>
+                    <a href="contact.html" class="btn-outline">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo">
+                    <p>The Global Hygiene Initiative is a program of Lloyd's Universe dedicated to improving health outcomes through hygiene education, resources, and community engagement worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn-hygiene.html">Learn Hygiene</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Get Resources</a></li>
+                        <li><a href="partner.html">Partner & Volunteer</a></li>
+                        <li><a href="impact.html">Impact Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Hygiene Ave, Health City, HC 12345</li>
+                        <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+                        <li><i class="fas fa-envelope"></i> info@globalhygiene.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-actions">
+                    <h4>Take Action</h4>
+                    <a href="#" class="btn-donate">Donate Now</a>
+                    <a href="partner.html" class="btn-volunteer">Volunteer</a>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global Hygiene Initiative by Lloyd's Universe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="workshops.js"></script>
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+</html>

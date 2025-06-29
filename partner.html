@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Hygiene Initiative | Partner & Volunteer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="partner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Global Hygiene Initiative Logo">
+                <span>Global Hygiene Initiative</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="learn-hygiene.html">Learn</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="resources.html">Resources</a>
+                <a href="partner.html">Partnership</a>
+                <a href="impact.html">Impact</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="learn-hygiene.html">Learn</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="resources.html">Resources</a>
+            <a href="partner.html">Partnership</a>
+            <a href="impact.html">Impact</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+  <!-- Hero Section -->
+  <header class="partner-hero">
+    <div class="container">
+      <h1>Partner With Us</h1>
+      <p>Join hands with individuals and organizations to promote health, dignity, and education worldwide.</p>
+      <a href="#onboarding" class="btn">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Why Partner Section -->
+  <section class="why-partner">
+    <div class="container">
+      <h2>Why Partner With Us?</h2>
+      <div class="grid">
+        <div class="card">
+          <i class="fas fa-heart"></i>
+          <h3>Shared Mission</h3>
+          <p>We align with partners who value health equity and sustainable hygiene solutions.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-hands-helping"></i>
+          <h3>Amplified Impact</h3>
+          <p>Together we've reached 50,000+ people across 12 countries.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-globe"></i>
+          <h3>Global Network</h3>
+          <p>Connect with NGOs, schools, and volunteers worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Roles -->
+  <section class="volunteer-roles">
+    <div class="container">
+      <h2>Volunteer Opportunities</h2>
+      <div class="role-grid">
+        <div class="role-card">
+          <h3><i class="fas fa-bullhorn"></i> Ambassador</h3>
+          <p>Promote our initiatives in your community. (2-5 hrs/week)</p>
+          <button class="role-btn">Learn More</button>
+        </div>
+        <div class="role-card">
+          <h3><i class="fas fa-truck"></i> Logistics Support</h3>
+          <p>Help coordinate hygiene kit distributions. (Flexible)</p>
+          <button class="role-btn">Learn More</button>
+        </div>
+        <div class="role-card">
+          <h3><i class="fas fa-language"></i> Content Translator</h3>
+          <p>Translate materials into local languages. (Project-based)</p>
+          <button class="role-btn">Learn More</button>
+        </div>
+        <div class="role-card">
+          <h3><i class="fas fa-calendar-alt"></i> Event Coordinator</h3>
+          <p>Organize workshops or fundraisers. (Seasonal)</p>
+          <button class="role-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Organizations -->
+  <section class="partners">
+    <div class="container">
+      <h2>Our Trusted Partners</h2>
+      <div class="partner-logos">
+        <img src="/images/ngo.jpg" alt="NGO Partner">
+        <img src="/images/veres.jpg" alt="School Partner">
+        <img src="/images/school.jpg" alt="Faith Group">
+        <img src="/images/coperate.jpg" alt="Corporate Partner">
+      </div>
+    </div>
+  </section>
+
+  <!-- Onboarding Forms -->
+  <section id="onboarding" class="onboarding-forms">
+    <div class="container">
+      <h2>Join Our Movement</h2>
+      <div class="form-toggle">
+        <button class="toggle-btn active" data-form="volunteer">Volunteer</button>
+        <button class="toggle-btn" data-form="organization">Organization</button>
+      </div>
+
+      <!-- Volunteer Form -->
+      <form id="volunteerForm" class="form active">
+        <div class="form-group">
+          <label for="vName">Full Name*</label>
+          <input type="text" id="vName" required>
+        </div>
+        <div class="form-group">
+          <label for="vEmail">Email*</label>
+          <input type="email" id="vEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="vRole">Interest Area*</label>
+          <select id="vRole" required>
+            <option value="">Select a role</option>
+            <option value="ambassador">Ambassador</option>
+            <option value="logistics">Logistics Support</option>
+            <option value="translator">Content Translator</option>
+            <option value="events">Event Coordinator</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="vAvailability">Availability*</label>
+          <select id="vAvailability" required>
+            <option value="">Select availability</option>
+            <option value="1-3">1-3 hours/week</option>
+            <option value="3-5">3-5 hours/week</option>
+            <option value="5+">5+ hours/week</option>
+            <option value="seasonal">Seasonal/Event-based</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Submit Application</button>
+      </form>
+
+      <!-- Organization Form -->
+      <form id="organizationForm" class="form">
+        <div class="form-group">
+          <label for="orgName">Organization Name*</label>
+          <input type="text" id="orgName" required>
+        </div>
+        <div class="form-group">
+          <label for="orgType">Organization Type*</label>
+          <select id="orgType" required>
+            <option value="">Select type</option>
+            <option value="ngo">NGO/Non-Profit</option>
+            <option value="school">School/University</option>
+            <option value="faith">Faith Group</option>
+            <option value="corporate">Corporate</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="orgEmail">Contact Email*</label>
+          <input type="email" id="orgEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="orgLocation">Location (Country/City)*</label>
+          <input type="text" id="orgLocation" required>
+        </div>
+        <div class="form-group">
+          <label for="orgInterest">Areas of Interest*</label>
+          <textarea id="orgInterest" placeholder="e.g., Hygiene kit distribution, education programs..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Request Partnership</button>
+      </form>
+    </div>
+  </section>
+
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo">
+                    <p>The Global Hygiene Initiative is a program of Lloyd's Universe dedicated to improving health outcomes through hygiene education, resources, and community engagement worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn-hygiene.html">Learn Hygiene</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Get Resources</a></li>
+                        <li><a href="partner.html">Partner & Volunteer</a></li>
+                        <li><a href="impact.html">Impact Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Hygiene Ave, Health City, HC 12345</li>
+                        <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+                        <li><i class="fas fa-envelope"></i> info@globalhygiene.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-actions">
+                    <h4>Take Action</h4>
+                    <a href="#" class="btn-donate">Donate Now</a>
+                    <a href="partner.html" class="btn-volunteer">Volunteer</a>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global Hygiene Initiative by Lloyd's Universe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

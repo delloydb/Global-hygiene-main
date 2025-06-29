@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support | Lloyd's Universe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="contact-header">
+        <div class="header-overlay"></div>
+        <h1>Connect With Us</h1>
+        <p>Your voice matters in our mission to spread hygiene awareness</p>
+        <div class="header-shapes">
+            <div class="shape-bubble"></div>
+            <div class="shape-wave"></div>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <!-- Interactive Path Selector -->
+        <div class="path-selector">
+            <div class="path-option active" data-path="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact Us</span>
+            </div>
+            <div class="path-option" data-path="support">
+                <i class="fas fa-hands-helping"></i>
+                <span>Support Our Cause</span>
+            </div>
+            <div class="path-option" data-path="volunteer">
+                <i class="fas fa-heart"></i>
+                <span>Volunteer</span>
+            </div>
+            <div class="selector-highlight"></div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <section class="contact-section active-section" id="contact-section">
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="floating-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                            <div class="underline"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="reason" required>
+                                <option value=""></option>
+                                <option value="general">General Inquiry</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="media">Media Inquiry</option>
+                                <option value="feedback">Feedback/Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="reason">Reason for Contact</label>
+                            <div class="underline"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" rows="4" required></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="underline"></div>
+                        </div>
+                        
+                        <button type="submit" class="interactive-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-container">
+                    <div class="info-card hq-card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Headquarters</h3>
+                        <p>123 Hygiene Avenue<br>Sanitation District<br>Health City, HC 10101</p>
+                    </div>
+                    
+                    <div class="info-card contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:contact@lloydsuniverse.org">contact@lloydsuniverse.org</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <a href="tel:+18005551234">+1 (800) 555-1234</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <p>Mon-Fri: 9AM - 5PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="support-section" id="support-section">
+            <h2>Support Our Mission</h2>
+            <p class="support-intro">Every contribution helps us spread hygiene awareness and create healthier communities.</p>
+            
+            <div class="donation-options">
+                <div class="donation-card" data-amount="25">
+                    <div class="donation-bubble">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <h3>One-Time Donation</h3>
+                    <p>Support our immediate hygiene initiatives</p>
+                    <div class="amount-selector">
+                        <span>$</span>
+                        <input type="number" value="25" min="1">
+                    </div>
+                    <button class="donate-btn">Donate Now</button>
+                </div>
+                
+                <div class="donation-card featured" data-amount="100">
+                    <div class="donation-bubble">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Sponsor an Ambassador</h3>
+                    <p>Fund a hygiene ambassador for one month</p>
+                    <div class="amount-selector">
+                        <span>$</span>
+                        <input type="number" value="100" min="50">
+                    </div>
+                    <button class="donate-btn">Sponsor Now</button>
+                    <div class="featured-badge">Most Popular</div>
+                </div>
+                
+                <div class="donation-card" data-amount="500">
+                    <div class="donation-bubble">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Partnership</h3>
+                    <p>Align your brand with our cause</p>
+                    <div class="amount-selector">
+                        <span>$</span>
+                        <input type="number" value="500" min="100">
+                    </div>
+                    <button class="donate-btn">Partner With Us</button>
+                </div>
+            </div>
+            
+            <div class="impact-meter">
+                <h3>Your Impact Meter</h3>
+                <div class="meter-container">
+                    <div class="meter-fill" style="width: 65%"></div>
+                </div>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <span class="stat-number">1,245</span>
+                        <span class="stat-label">Hygiene Kits</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">78</span>
+                        <span class="stat-label">Ambassadors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Communities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Section -->
+        <section class="volunteer-section" id="volunteer-section">
+            <div class="volunteer-hero">
+                <h2>Join Our Volunteer Team</h2>
+                <p>Become a hygiene champion in your community</p>
+            </div>
+            
+            <div class="volunteer-options">
+                <div class="volunteer-card">
+                    <div class="volunteer-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Community Educator</h3>
+                    <p>Teach hygiene practices in local schools and communities</p>
+                    <button class="volunteer-cta">Learn More</button>
+                </div>
+                
+                <div class="volunteer-card">
+                    <div class="volunteer-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Kit Assembler</h3>
+                    <p>Help prepare hygiene kits for distribution</p>
+                    <button class="volunteer-cta">Learn More</button>
+                </div>
+                
+                <div class="volunteer-card">
+                    <div class="volunteer-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Digital Volunteer</h3>
+                    <p>Support our online campaigns and content creation</p>
+                    <button class="volunteer-cta">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="volunteer-testimonials">
+                <h3>What Our Volunteers Say</h3>
+                <div class="testimonial-carousel">
+                    <!-- Testimonials would be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="contact.js"></script>
+</body>
+</html>

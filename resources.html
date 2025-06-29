@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Resources | Global Hygiene Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Leaflet MarkerCluster -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Global Hygiene Initiative Logo">
+                <span>Global Hygiene Initiative</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="learn-hygiene.html">Learn</a>
+                <a href="workshops.html">Workshops</a>
+                <a href="resources.html">Resources</a>
+                <a href="partner.html">Partnership</a>
+                <a href="impact.html">Impact</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="learn-hygiene.html">Learn</a>
+            <a href="workshops.html">Workshops</a>
+            <a href="resources.html">Resources</a>
+            <a href="partner.html">Partnership</a>
+            <a href="impact.html">Impact</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="resources-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Access Essential Hygiene Resources</h1>
+                <p class="hero-text">Find free or subsidized hygiene kits, services, and distribution centers near you</p>
+                <div class="hero-buttons">
+                    <a href="#locator" class="btn-primary">Find Resources Near Me</a>
+                    <a href="#request" class="btn-secondary">Request a Kit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locator Map -->
+    <section class="locator-section" id="locator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resource Locator</h2>
+                <p class="section-subtitle">Find hygiene resources available in your community</p>
+            </div>
+            
+            <div class="locator-tools">
+                <div class="locator-filters">
+                    <div class="filter-group">
+                        <label for="resource-type">Resource Type:</label>
+                        <select id="resource-type">
+                            <option value="all">All Resources</option>
+                            <option value="center">Hygiene Centers</option>
+                            <option value="distribution">Kit Distribution Points</option>
+                            <option value="mobile">Mobile Workshop Vans</option>
+                            <option value="emergency">Emergency Services</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="distance">Distance:</label>
+                        <select id="distance">
+                            <option value="5">Within 5 miles</option>
+                            <option value="10">Within 10 miles</option>
+                            <option value="25">Within 25 miles</option>
+                            <option value="50">Within 50 miles</option>
+                            <option value="all">Show all</option>
+                        </select>
+                    </div>
+                    <button class="btn-locate" id="locate-me">
+                        <i class="fas fa-location-arrow"></i> Use My Location
+                    </button>
+                </div>
+                <div class="locator-status" id="location-status">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Allow location access to find resources near you</span>
+                </div>
+            </div>
+            
+            <div class="locator-container">
+                <div class="map-container">
+                    <div id="resource-map"></div>
+                </div>
+                <div class="resource-list-container">
+                    <div class="resource-list-header">
+                        <h3>Nearby Resources</h3>
+                        <div class="result-count" id="result-count">0 results</div>
+                    </div>
+                    <div class="resource-list" id="resource-list">
+                        <!-- Resources will be populated here by JavaScript -->
+                        <div class="empty-state">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Use the location button or search filters to find resources</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request a Hygiene Kit -->
+    <section class="request-section" id="request">
+        <div class="container">
+            <div class="section-header">
+                <h2>Request a Hygiene Kit</h2>
+                <p class="section-subtitle">Get essential hygiene supplies delivered to your community</p>
+            </div>
+            
+            <div class="request-container">
+                <div class="request-info">
+                    <h3>How It Works</h3>
+                    <ol class="request-steps">
+                        <li>
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Complete the Request Form</h4>
+                                <p>Provide basic information about your needs and location</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Verification</h4>
+                                <p>Our team will review your request within 48 hours</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Delivery Coordination</h4>
+                                <p>We'll contact you to arrange pickup or delivery</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="request-faq">
+                        <h4>Frequently Asked Questions</h4>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Who is eligible to receive hygiene kits?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our hygiene kits are available to individuals and communities in need, with priority given to underserved areas, schools, shelters, and crisis situations. We work to ensure equitable distribution to those who need them most.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is there a cost for the hygiene kits?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Standard hygiene kits are provided free of charge through donor support. In some cases, we may offer subsidized premium kits for organizations that can contribute to the costs.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How many kits can I request?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>For individuals, we typically provide 1 kit per person. For organizations and community groups, we assess needs based on the size of your group and available inventory.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="request-form" id="kit-request-form">
+                    <h3>Request Form</h3>
+                    
+                    <div class="form-group">
+                        <label for="request-name">Full Name *</label>
+                        <input type="text" id="request-name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="request-email">Email *</label>
+                            <input type="email" id="request-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-phone">Phone</label>
+                            <input type="tel" id="request-phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request-org">Organization (if applicable)</label>
+                        <input type="text" id="request-org">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="request-country">Country *</label>
+                            <select id="request-country" required>
+                                <option value="">Select Country</option>
+                                <option value="kenya">Kenya</option>
+                                <option value="india">India</option>
+                                <option value="guatemala">Guatemala</option>
+                                <option value="indonesia">Indonesia</option>
+                                <option value="bangladesh">Bangladesh</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-city">City/Town *</label>
+                            <input type="text" id="request-city" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request-address">Full Address</label>
+                        <textarea id="request-address" rows="2"></textarea>
+                        <p class="help-text">Provide as much detail as possible for delivery</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Kit Type Needed *</label>
+                        <div class="kit-options">
+                            <div class="kit-option">
+                                <input type="radio" id="kit-standard" name="kit-type" value="standard" checked>
+                                <label for="kit-standard">
+                                    <span class="kit-name">Standard Hygiene Kit</span>
+                                    <span class="kit-desc">Basic personal hygiene items</span>
+                                </label>
+                            </div>
+                            <div class="kit-option">
+                                <input type="radio" id="kit-family" name="kit-type" value="family">
+                                <label for="kit-family">
+                                    <span class="kit-name">Family Kit</span>
+                                    <span class="kit-desc">Supplies for households</span>
+                                </label>
+                            </div>
+                            <div class="kit-option">
+                                <input type="radio" id="kit-feminine" name="kit-type" value="feminine">
+                                <label for="kit-feminine">
+                                    <span class="kit-name">Feminine Hygiene Kit</span>
+                                    <span class="kit-desc">Includes menstrual products</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request-quantity">Quantity Needed *</label>
+                        <select id="request-quantity" required>
+                            <option value="1">1</option>
+                            <option value="2-5">2-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11-20">11-20</option>
+                            <option value="20+">20+ (please specify below)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request-notes">Additional Notes</label>
+                        <textarea id="request-notes" rows="3"></textarea>
+                        <p class="help-text">Specify any special needs or circumstances</p>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="request-agree" required>
+                        <label for="request-agree">I confirm that the information provided is accurate and I meet the eligibility criteria</label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">Submit Request</button>
+                        <p class="form-note">You'll receive a confirmation email with your request details.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's in a Hygiene Kit -->
+    <section class="kit-contents">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's in a Hygiene Kit?</h2>
+                <p class="section-subtitle">Our kits contain essential items to promote health and dignity</p>
+            </div>
+            
+            <div class="kit-tabs">
+                <button class="kit-tab active" data-kit="standard">Standard Kit</button>
+                <button class="kit-tab" data-kit="family">Family Kit</button>
+                <button class="kit-tab" data-kit="feminine">Feminine Kit</button>
+            </div>
+            
+            <div class="kit-content">
+                <!-- Standard Kit -->
+                <div class="kit-panel active" id="standard-panel">
+                    <div class="kit-visual">
+                        <div class="kit-items">
+                            <div class="kit-item" data-item="soap">
+                                <div class="item-image">
+                                    <img src="images/kit-items/soap.jpg" alt="Soap">
+                                </div>
+                                <div class="item-name">Bar Soap</div>
+                                <div class="item-quantity">2 bars</div>
+                            </div>
+                            <div class="kit-item" data-item="toothbrush">
+                                <div class="item-image">
+                                    <img src="images/kit-items/toothbrush.jpg" alt="Toothbrush">
+                                </div>
+                                <div class="item-name">Toothbrush</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="toothpaste">
+                                <div class="item-image">
+                                    <img src="images/kit-items/toothpaste.jpg" alt="Toothpaste">
+                                </div>
+                                <div class="item-name">Toothpaste</div>
+                                <div class="item-quantity">1 tube</div>
+                            </div>
+                            <div class="kit-item" data-item="mask">
+                                <div class="item-image">
+                                    <img src="images/kit-items/mask.jpg" alt="Mask">
+                                </div>
+                                <div class="item-name">Face Mask</div>
+                                <div class="item-quantity">2</div>
+                            </div>
+                            <div class="kit-item" data-item="comb">
+                                <div class="item-image">
+                                    <img src="images/kit-items/comb.jpg" alt="Comb">
+                                </div>
+                                <div class="item-name">Comb</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="deodorant">
+                                <div class="item-image">
+                                    <img src="images/kit-items/deodorant.jpg" alt="Deodorant">
+                                </div>
+                                <div class="item-name">Deodorant</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="clippers">
+                                <div class="item-image">
+                                    <img src="images/kit-items/clippers.jpg" alt="Nail clippers">
+                                </div>
+                                <div class="item-name">Nail Clippers</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-details">
+                        <h3>Standard Hygiene Kit</h3>
+                        <p>The standard kit contains essential personal hygiene items to support basic health and cleanliness for individuals.</p>
+                        <div class="kit-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>For: Individuals</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duration: ~1 month</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight"></i>
+                                <span>Weight: 0.8 kg</span>
+                            </div>
+                        </div>
+                        <div class="kit-instructions">
+                            <h4>Usage Instructions</h4>
+                            <ul>
+                                <li>Use soap for daily bathing and handwashing</li>
+                                <li>Brush teeth twice daily with toothpaste</li>
+                                <li>Replace mask after 8 hours of use or when damp</li>
+                                <li>Clean nail clippers with alcohol after each use</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Family Kit -->
+                <div class="kit-panel" id="family-panel">
+                    <div class="kit-visual">
+                        <div class="kit-items">
+                            <div class="kit-item" data-item="soap">
+                                <div class="item-image">
+                                    <img src="images/kit-items/soap.jpg" alt="Soap">
+                                </div>
+                                <div class="item-name">Bar Soap</div>
+                                <div class="item-quantity">4 bars</div>
+                            </div>
+                            <div class="kit-item" data-item="toothbrush">
+                                <div class="item-image">
+                                    <img src="images/kit-items/toothbrush.jpg" alt="Toothbrush">
+                                </div>
+                                <div class="item-name">Toothbrushes</div>
+                                <div class="item-quantity">4</div>
+                            </div>
+                            <div class="kit-item" data-item="toothpaste">
+                                <div class="item-image">
+                                    <img src="images/kit-items/toothpaste.jpg" alt="Toothpaste">
+                                </div>
+                                <div class="item-name">Toothpaste</div>
+                                <div class="item-quantity">2 tubes</div>
+                            </div>
+                            <div class="kit-item" data-item="mask">
+                                <div class="item-image">
+                                    <img src="images/kit-items/mask.jpg" alt="Mask">
+                                </div>
+                                <div class="item-name">Face Masks</div>
+                                <div class="item-quantity">8</div>
+                            </div>
+                            <div class="kit-item" data-item="shampoo">
+                                <div class="item-image">
+                                    <img src="images/kit-items/shampoo.jpg" alt="Shampoo">
+                                </div>
+                                <div class="item-name">Shampoo</div>
+                                <div class="item-quantity">1 bottle</div>
+                            </div>
+                            <div class="kit-item" data-item="towel">
+                                <div class="item-image">
+                                    <img src="images/kit-items/towel.jpg" alt="Towel">
+                                </div>
+                                <div class="item-name">Microfiber Towel</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="razor">
+                                <div class="item-image">
+                                    <img src="images/kit-items/razor.jpg" alt="Razor">
+                                </div>
+                                <div class="item-name">Disposable Razor</div>
+                                <div class="item-quantity">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-details">
+                        <h3>Family Hygiene Kit</h3>
+                        <p>The family kit contains expanded quantities of essential items to support households with multiple members.</p>
+                        <div class="kit-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>For: Families (4-5 people)</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duration: ~2 weeks</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight"></i>
+                                <span>Weight: 2.5 kg</span>
+                            </div>
+                        </div>
+                        <div class="kit-instructions">
+                            <h4>Usage Instructions</h4>
+                            <ul>
+                                <li>Assign personal items (toothbrushes, razors) to individuals</li>
+                                <li>Store soap in a dry place between uses</li>
+                                <li>Use shampoo sparingly - a coin-sized amount is sufficient</li>
+                                <li>Hang towel to dry completely after each use</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feminine Kit -->
+                <div class="kit-panel" id="feminine-panel">
+                    <div class="kit-visual">
+                        <div class="kit-items">
+                            <div class="kit-item" data-item="pads">
+                                <div class="item-image">
+                                    <img src="images/kit-items/pads.jpg" alt="Sanitary pads">
+                                </div>
+                                <div class="item-name">Sanitary Pads</div>
+                                <div class="item-quantity">8</div>
+                            </div>
+                            <div class="kit-item" data-item="soap">
+                                <div class="item-image">
+                                    <img src="images/kit-items/soap.jpg" alt="Soap">
+                                </div>
+                                <div class="item-name">Bar Soap</div>
+                                <div class="item-quantity">2 bars</div>
+                            </div>
+                            <div class="kit-item" data-item="underwear">
+                                <div class="item-image">
+                                    <img src="images/kit-items/underwear.jpg" alt="Underwear">
+                                </div>
+                                <div class="item-name">Underwear</div>
+                                <div class="item-quantity">2 pairs</div>
+                            </div>
+                            <div class="kit-item" data-item="washcloth">
+                                <div class="item-image">
+                                    <img src="images/kit-items/washcloth.jpg" alt="Washcloth">
+                                </div>
+                                <div class="item-name">Washcloth</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="bag">
+                                <div class="item-image">
+                                    <img src="images/kit-items/bag.jpg" alt="Zipper bag">
+                                </div>
+                                <div class="item-name">Disposal Bag</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                            <div class="kit-item" data-item="information">
+                                <div class="item-image">
+                                    <img src="images/kit-items/information.jpg" alt="Information card">
+                                </div>
+                                <div class="item-name">Health Information</div>
+                                <div class="item-quantity">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit-details">
+                        <h3>Feminine Hygiene Kit</h3>
+                        <p>The feminine kit contains specialized items to support menstrual health and personal hygiene for women and girls.</p>
+                        <div class="kit-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-users"></i>
+                                <span>For: Women & Girls</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duration: ~1 cycle</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight"></i>
+                                <span>Weight: 0.6 kg</span>
+                            </div>
+                        </div>
+                        <div class="kit-instructions">
+                            <h4>Usage Instructions</h4>
+                            <ul>
+                                <li>Change pads every 4-6 hours or when saturated</li>
+                                <li>Wash hands before and after changing products</li>
+                                <li>Use washcloth with soap for daily cleaning</li>
+                                <li>Dispose of used products in provided bag</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo">
+                    <p>The Global Hygiene Initiative is a program of Lloyd's Universe dedicated to improving health outcomes through hygiene education, resources, and community engagement worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="learn-hygiene.html">Learn Hygiene</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="resources.html">Get Resources</a></li>
+                        <li><a href="partner.html">Partner & Volunteer</a></li>
+                        <li><a href="impact.html">Impact Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Hygiene Ave, Health City, HC 12345</li>
+                        <li><i class="fas fa-phone"></i> +1 (234) 567-8900</li>
+                        <li><i class="fas fa-envelope"></i> info@globalhygiene.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-actions">
+                    <h4>Take Action</h4>
+                    <a href="#" class="btn-donate">Donate Now</a>
+                    <a href="partner.html" class="btn-volunteer">Volunteer</a>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global Hygiene Initiative by Lloyd's Universe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="resources.js"></script>
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Leaflet MarkerCluster -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+</body>
+</html>

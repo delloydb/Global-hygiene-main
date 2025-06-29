@@ -1,0 +1,384 @@
+/* partner.css - Specific styles for Partner & Volunteer page */
+
+/* ===== Hero Section ===== */
+.partner-hero {
+    background: linear-gradient(rgba(43, 122, 120, 0.85), rgba(43, 122, 119, 0.055)), 
+                url('../images/partner-hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 8rem 0 6rem;
+    position: relative;
+}
+
+.partner-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.partner-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 3.5rem;
+}
+
+.partner-hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+}
+
+.partner-hero .btn {
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* ===== Why Partner Section ===== */
+.why-partner {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+}
+
+.why-partner h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: #2B7A78;
+}
+
+.why-partner .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.why-partner .card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.why-partner .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.why-partner .card i {
+    font-size: 2.8rem;
+    color: #3AAFA9;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.why-partner .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #17252A;
+}
+
+.why-partner .card p {
+    color: #5a6f7b;
+    line-height: 1.6;
+}
+
+/* ===== Volunteer Roles ===== */
+.volunteer-roles {
+    padding: 5rem 0;
+    background: white;
+}
+
+.volunteer-roles h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: #2B7A78;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.role-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 4px solid #3AAFA9;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.role-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #17252A;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.role-card h3 i {
+    color: #3AAFA9;
+    font-size: 1.4rem;
+}
+
+.role-card p {
+    color: #5a6f7b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.role-btn {
+    background: transparent;
+    border: 2px solid #3AAFA9;
+    color: #3AAFA9;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.role-btn:hover {
+    background: #3AAFA9;
+    color: white;
+}
+
+/* ===== Partners Section ===== */
+.partners {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+}
+
+.partners h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: #2B7A78;
+}
+
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partner-logos img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.partner-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* ===== Onboarding Forms ===== */
+.onboarding-forms {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #2B7A78 0%, #3AAFA9 100%);
+    color: white;
+}
+
+.onboarding-forms h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: white;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    color: white;
+}
+
+.toggle-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.9);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: white;
+    color: #2B7A78;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.form .btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .partner-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .why-partner .grid,
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partner-logos {
+        gap: 2rem;
+    }
+    
+    .partner-logos img {
+        height: 50px;
+    }
+    
+    .toggle-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-hero {
+        padding: 6rem 0 4rem;
+    }
+    
+    .partner-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .partner-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .why-partner .card,
+    .role-card {
+        padding: 1.8rem 1.5rem;
+    }
+    
+    .form-toggle {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    
+    .toggle-btn {
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .toggle-btn.active::after {
+        display: none;
+    }
+}
