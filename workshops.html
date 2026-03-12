@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join our hands‑on hygiene workshops and outreach programs – Global Hygiene Initiative">
     <title>Workshops & Outreach | Global Hygiene Initiative</title>
-    <!-- Preload & styles -->
+    <!-- Preload critical assets -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="workshops.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" as="style">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="workshops.css">
-    <!-- Font Awesome (optimised) -->
+    <!-- Font Awesome: optimised loading -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
     <!-- Leaflet (deferred) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
 </head>
 <body>
-    <!-- Skip link (accessibility) -->
+    <!-- Skip to main content (accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation (active class set to Workshops) -->
+    <!-- Navigation (consistent with global design) -->
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Global Hygiene Initiative home">
-                <img src="images/logo.png" alt="Global Hygiene Initiative Logo" width="40" height="40">
+                <img src="images/logo.png" alt="Global Hygiene Initiative Logo" width="40" height="40" loading="lazy">
                 <span>Global Hygiene Initiative</span>
             </a>
             <div class="nav-links">
@@ -41,14 +43,14 @@
                 <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
-                <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                     <div class="bar" aria-hidden="true"></div>
                     <div class="bar" aria-hidden="true"></div>
                     <div class="bar" aria-hidden="true"></div>
                 </button>
             </div>
         </div>
-        <div class="mobile-menu" aria-label="mobile navigation">
+        <div id="mobile-menu" class="mobile-menu" aria-label="mobile navigation" hidden>
             <a href="index.html">Home</a>
             <a href="learn-hygiene.html">Learn</a>
             <a href="workshops.html" class="active">Workshops</a>
@@ -94,7 +96,7 @@
                     <!-- What We Do Panel -->
                     <div class="vision-panel active" id="what-panel" role="tabpanel" aria-labelledby="what-tab">
                         <div class="panel-image">
-                            <img src="images/workshop-activity.jpg" alt="Workshop activity" loading="lazy" width="600" height="400">
+                            <img src="images/workshop-activity.jpg" alt="Workshop participants learning handwashing techniques" loading="lazy" width="600" height="400">
                         </div>
                         <div class="panel-text">
                             <h3>Comprehensive Hygiene Education</h3>
@@ -127,7 +129,7 @@
                     <!-- Who We Serve Panel -->
                     <div class="vision-panel" id="who-panel" role="tabpanel" aria-labelledby="who-tab">
                         <div class="panel-image">
-                            <img src="images/community-group.jpg" alt="Community group" loading="lazy" width="600" height="400">
+                            <img src="images/community-group.jpg" alt="Community members at a hygiene workshop" loading="lazy" width="600" height="400">
                         </div>
                         <div class="panel-text">
                             <h3>Focusing on Underserved Communities</h3>
@@ -169,7 +171,7 @@
                     <!-- Impact Panel -->
                     <div class="vision-panel" id="impact-panel" role="tabpanel" aria-labelledby="impact-tab">
                         <div class="panel-image">
-                            <img src="images/workshop-impact.jpg" alt="Workshop impact" loading="lazy" width="600" height="400">
+                            <img src="images/workshop-impact.jpg" alt="Happy workshop participants showing hygiene kits" loading="lazy" width="600" height="400">
                         </div>
                         <div class="panel-text">
                             <h3>Measurable, Sustainable Impact</h3>
@@ -195,7 +197,7 @@
                             <div class="testimonial-impact">
                                 <blockquote>"After the workshop, our village saw fewer cases of diarrhea and skin infections. The children remind each other to wash hands properly!"</blockquote>
                                 <div class="testimonial-author">
-                                    <img src="images/testimonial-local.jpg" alt="Community leader" loading="lazy" width="60" height="60">
+                                    <img src="images/testimonial-local.jpg" alt="Portrait of Maria Fernandez, community leader" loading="lazy" width="60" height="60">
                                     <div>
                                         <div class="author-name">Maria Fernandez</div>
                                         <div class="author-title">Community Leader, Guatemala</div>
@@ -240,6 +242,7 @@
                                 <option value="jun">June 2023</option>
                                 <option value="jul">July 2023</option>
                                 <option value="aug">August 2023</option>
+                                <option value="may">May 2023</option>
                             </select>
                         </div>
                         <div class="filter-group">
@@ -340,22 +343,22 @@
                     <form class="volunteer-form" id="ambassador-form" novalidate>
                         <div class="form-group">
                             <label for="full-name">Full Name *</label>
-                            <input type="text" id="full-name" required>
+                            <input type="text" id="full-name" name="full-name" required aria-required="true">
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" required>
+                                <input type="email" id="email" name="email" required aria-required="true">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="tel" id="phone">
+                                <input type="tel" id="phone" name="phone">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="country">Country *</label>
-                                <select id="country" required>
+                                <select id="country" name="country" required aria-required="true">
                                     <option value="">Select Country</option>
                                     <option value="kenya">Kenya</option>
                                     <option value="india">India</option>
@@ -367,21 +370,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="city">City/Town *</label>
-                                <input type="text" id="city" required>
+                                <input type="text" id="city" name="city" required aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="experience">Relevant Experience *</label>
-                            <textarea id="experience" rows="3" required></textarea>
+                            <textarea id="experience" name="experience" rows="3" required aria-required="true"></textarea>
                             <p class="help-text">Briefly describe any teaching, community work, or health-related experience</p>
                         </div>
                         <div class="form-group">
                             <label for="motivation">Motivation *</label>
-                            <textarea id="motivation" rows="3" required></textarea>
+                            <textarea id="motivation" name="motivation" rows="3" required aria-required="true"></textarea>
                             <p class="help-text">Why do you want to become a hygiene ambassador?</p>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="commitment" required>
+                            <input type="checkbox" id="commitment" name="commitment" required aria-required="true">
                             <label for="commitment">I commit to conducting at least 4 workshops per year if certified</label>
                         </div>
                         <div class="form-submit">
@@ -435,23 +438,23 @@
                     <div class="gallery-panel" id="stories-panel" role="tabpanel" aria-labelledby="stories-tab">
                         <div class="story-carousel">
                             <div class="story-card active">
-                                <div class="story-image"><img src="images/stories/story1.jpg" alt="Success story" loading="lazy"></div>
+                                <div class="story-image"><img src="images/stories/story1.jpg" alt="Community members with clean water" loading="lazy"></div>
                                 <div class="story-text"><h3>Clean Water, Healthy Village</h3><p class="story-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rural Kenya</p><p>After our WASH workshop, the community built proper sanitation facilities and protected their water source. Waterborne illnesses dropped by 70%.</p><blockquote>"We didn't realize how our daily habits were making us sick. Now our children are healthier and missing less school."</blockquote><div class="story-author"><img src="images/stories/author1.jpg" alt="James Mwangi"><div><div class="author-name">James Mwangi</div><div class="author-role">Community Elder</div></div></div></div>
                             </div>
                             <div class="story-card">
-                                <div class="story-image"><img src="images/stories/story2.jpg" alt="Success story" loading="lazy"></div>
+                                <div class="story-image"><img src="images/stories/story2.jpg" alt="Priya Patel teaching children" loading="lazy"></div>
                                 <div class="story-text"><h3>From Participant to Trainer</h3><p class="story-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mumbai, India</p><p>Priya attended our workshop as a teenager, then became a certified trainer. She's now taught hygiene practices to over 500 students in her neighborhood.</p><blockquote>"The workshop changed my life. Now I'm proud to help others live healthier lives too."</blockquote><div class="story-author"><img src="images/stories/author2.jpg" alt="Priya Patel"><div><div class="author-name">Priya Patel</div><div class="author-role">Local Ambassador</div></div></div></div>
                             </div>
                             <div class="story-card">
-                                <div class="story-image"><img src="images/stories/story3.jpg" alt="Success story" loading="lazy"></div>
+                                <div class="story-image"><img src="images/stories/story3.jpg" alt="Students in a classroom" loading="lazy"></div>
                                 <div class="story-text"><h3>A School's Transformation</h3><p class="story-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Guatemala City</p><p>After implementing our school hygiene program, attendance rates improved by 25% as students stayed healthier. The school now serves as a model for others in the district.</p><blockquote>"Our students are more focused in class now that they're not constantly battling preventable illnesses."</blockquote><div class="story-author"><img src="images/stories/author3.jpg" alt="Carlos Mendez"><div><div class="author-name">Carlos Mendez</div><div class="author-role">School Principal</div></div></div></div>
                             </div>
                             <div class="carousel-controls">
                                 <button class="carousel-prev" aria-label="Previous story"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
                                 <div class="carousel-indicators">
-                                    <span class="indicator active" data-slide="0" aria-label="Story 1" role="button" tabindex="0"></span>
-                                    <span class="indicator" data-slide="1" aria-label="Story 2" role="button" tabindex="0"></span>
-                                    <span class="indicator" data-slide="2" aria-label="Story 3" role="button" tabindex="0"></span>
+                                    <button class="indicator active" data-slide="0" aria-label="Story 1"></button>
+                                    <button class="indicator" data-slide="1" aria-label="Story 2"></button>
+                                    <button class="indicator" data-slide="2" aria-label="Story 3"></button>
                                 </div>
                                 <button class="carousel-next" aria-label="Next story"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                             </div>
@@ -478,12 +481,12 @@
         </section>
     </main>
 
-    <!-- Footer (same as global) -->
+    <!-- Footer (global) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-about">
-                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo" width="60" height="60">
+                    <img src="images/logo-white.png" alt="Global Hygiene Initiative Logo" class="footer-logo" width="60" height="60" loading="lazy">
                     <p>The Global Hygiene Initiative is a program of Lloyd's Universe dedicated to improving health outcomes through hygiene education, resources, and community engagement worldwide.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
